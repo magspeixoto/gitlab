@@ -1,6 +1,6 @@
 const app = require('express')();
 
-const bodyParser = require('body-parser');
+/* const bodyParser = require('body-parser'); */
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 const consign = require('consign');
@@ -20,7 +20,7 @@ consign({ cwd: 'src', verbose: false })
   .into(app);
 
 app.get('/', (req, res) => {
-  res.status(200).send();
+  res.status(200).send('Working home Page');
 });
 
 app.use((err, req, res, next) => {
