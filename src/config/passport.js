@@ -1,4 +1,4 @@
-/* const passport = require('passport');
+const passport = require('passport');
 const passportJwt = require('passport-jwt');
 
 const secret = 'ipca!DWM@202324';
@@ -25,4 +25,3 @@ module.exports = (app) => {
     authenticate: () => passport.authenticate('jwt', { session: false }),
   };
 };
- */

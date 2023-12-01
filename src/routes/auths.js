@@ -1,4 +1,4 @@
-/* const jwt = require('jwt-simple');
+const jwt = require('jwt-simple');
 const bcrypt = require('bcrypt-nodejs');
 const ValidationError = require('../errors/validationErrors');
 
@@ -22,4 +22,3 @@ module.exports = (app) => {
   };
   return { signin };
 };
- */
