@@ -19,7 +19,7 @@ module.exports = (app) => {
     if (!user.email) throw new ValidationError('Email obrigatório');
     if (!user.password) throw new ValidationError('Password obrigatória');
 
-    const userDb = await findAll({ email: user.email });
+    const userDb = await findOne({ email: user.email });
     if (userDb) throw new ValidationError('Email duplicado na BD');
 
     const newUser = { ...user };

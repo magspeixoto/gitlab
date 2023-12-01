@@ -41,7 +41,7 @@ test('Test #2 - Inserir utilizadores', () => {
 test('Test #2.1 - Guardar palavra-passe encriptada', async () => {
   const res = await request(app).post('/users')
     .set('authorization', `bearer ${user.token}`)
-    .send({ name: 'Margarida Peixoto', email: mail, password: '12345' });
+    .send({ name: 'Margarida Peixoto', email: `teste2.1-${Date.now()}@ipcap.pt`, password: '12345' });
   expect(res.status).toBe(201);
 
   const { id } = res.body;

@@ -16,8 +16,9 @@ test('Test #13 - Receber Token ao autenticar', () => {
 });
 
 test('Test #14 - Tentativa de autenticação errada', () => {
+  const nmail = `teste14-${Date.now()}@ipca.pt`;
   return app.services.user.save(
-    { name: 'Margarida Auth', email: newMail, password: '12345' },
+    { name: 'Margarida Auth', email: nmail, password: '12345' },
   ).then(() => request(app).post('/auth/signin')
     .send({ email: newMail, password: '132' }))
     .then((res) => {
@@ -44,8 +45,9 @@ test('Test #16 - Aceder a rotas protegidas', () => {
 });
 
 test('Test #17 - Criar utilizador', () => {
+  const nmail = `teste17-${Date.now()}@ipca.pt`;
   return request(app).post('/auth/signup')
-    .send({ name: 'Margarida Signup', email: newMail, password: '12345' })
+    .send({ name: 'Margarida Signup', email: nmail, password: '12345' })
     .then((res) => {
       expect(res.status).toBe(201);
       expect(res.body.name).toBe('Margarida Signup');

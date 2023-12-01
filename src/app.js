@@ -1,7 +1,4 @@
 const app = require('express')();
-
-const bodyParser = require('body-parser');
-
 // eslint-disable-next-line import/no-extraneous-dependencies
 const consign = require('consign');
 
