@@ -17,7 +17,7 @@ consign({ cwd: 'src', verbose: false })
   .into(app);
 
 app.get('/', (req, res) => {
-  res.status(200).send();
+  res.status(200).send('Working home Page');
 });
 
 app.use((err, req, res, next) => {
