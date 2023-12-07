@@ -1,0 +1,55 @@
+ORDEM A TER ATENÇÃO NA CRIAÇÃO DOS ENDPOINTS E TESTES
+
+1. Criar Test (completo)
+
+2. Criar rota do endpoint
+
+3. Criar o endpoint
+
+4. Criar o serviço
+
+
+---------------------------
+
+
+EXECUÇÃO DO CRUD
+
+1 get
+1 post
+1 put
+1 delete
+
+---------------------------
+INICIO DE PROJETO
+
+DOCKER:
+
+docker run --name fixaagora -e POSTGRES_PASSWORD=12345 -p 9050:5432 -d postgres
+
+
+COMANDAS AJUDA
+
+git clone <link github>
+
+git init 
+
+git remote add origin (link)
+
+git pull origin main --allow-unrelated-histories
+
+git checkout -b <nome da branch>
+
+git branch master
+
+git add .
+
+git commit -m "..."
+
+git push origin main
+
+
+
+------------------------
+
+
+git checkout -b <nome da branch>

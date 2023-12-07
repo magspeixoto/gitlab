@@ -2,11 +2,10 @@ const app = require('express')();
 // eslint-disable-next-line import/no-extraneous-dependencies
 const consign = require('consign');
 
-const config = require('./config');
-
 const knex = require('knex');
 
-console.log('Current environment:', config.NODE_ENV);
+const config = require('./config');
+
 const knexfile = require('../knexfile');
 
 // app.db = knex(knexfile.test);
