@@ -10,7 +10,9 @@
     "start": "node src/server.js",
     "test": "jest",
     "lint": "eslint src/** test/** --fix",
-    "secure-mode": "jest --watch"
+    "knex:migrate:test": "set NODE_ENV=test&& knex migrate:latest --env test",
+    "secure-mode": "set NODE_ENV=test&& jest --watchAll",
+    "start:test": "set NODE_ENV=test&& npm run knex:migrate:test && node src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +29,7 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "1.20.2",
     "consign": "0.1.6",
+    "dotenv": "^16.3.1",
     "express": "4.18.2",
     "jwt-simple": "0.5.6",
     "knex": "3.0.1",

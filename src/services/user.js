@@ -9,6 +9,18 @@ module.exports = (app) => {
     return app.db('users').where(filter).first();
   };
 
+  const update = (id, user) => {
+    return app.db('users')
+      .where({ id })
+      .update(user, '*');
+  };
+
+  const remove = (id) => {
+    return app.db('users')
+      .where({ id })
+      .del();
+  };
+
   const GetPasswdHash = (passwd) => {
     const salt = bcrypt.genSaltSync(10);
     return bcrypt.hashSync(passwd, salt);
@@ -26,5 +38,7 @@ module.exports = (app) => {
     newUser.password = GetPasswdHash(user.password);
     return app.db('users').insert(newUser, ['id', 'email', 'name']);
   };
-  return { findAll, save, findOne };
+  return {
+    findAll, save, findOne, update, remove,
+  };
 };

@@ -8,9 +8,9 @@ module.exports = (app) => {
     .post(app.routes.users.create);
   /* .put(app.routes.users.update)
     .delete(app.routes.users.remove); */
-  /* app.route('/users/:id')
+  app.route('/users/:id')
     .all(app.config.passport.authenticate())
     .get(app.routes.users.get)
     .put(app.routes.users.update)
-    .delete(app.routes.users.remove); */
+    .delete(app.routes.users.remove);
 };

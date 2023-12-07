@@ -4,7 +4,7 @@ const jwt = require('jwt-simple');
 
 const app = require('../../src/app');
 
-const mail = `${Date.now()}12@gmail.pt`;
+const mail = `user${Date.now()}12@gmail.pt`;
 
 const secret = 'ipca!DWM@202324';
 

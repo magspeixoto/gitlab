@@ -2,7 +2,7 @@ const request = require('supertest');
 
 const app = require('../../src/app');
 
-const newMail = `${Date.now()}54@gmail.pt`;
+const newMail = `auths${Date.now()}54@gmail.pt`;
 
 test('Test #13 - Receber Token ao autenticar', () => {
   return app.services.user.save(

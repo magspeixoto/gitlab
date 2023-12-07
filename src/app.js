@@ -2,15 +2,19 @@ const app = require('express')();
 // eslint-disable-next-line import/no-extraneous-dependencies
 const consign = require('consign');
 
+const config = require('./config');
+
 const knex = require('knex');
 
+console.log('Current environment:', config.NODE_ENV);
 const knexfile = require('../knexfile');
 
-app.db = knex(knexfile.test);
+// app.db = knex(knexfile.test);
+app.db = knex(knexfile[config.NODE_ENV]);
 
 consign({ cwd: 'src', verbose: false })
   .include('./config/passport.js')
-  .include('./config/middlewares.js')
+  .then('./config/middlewares.js')
   .then('./services')
   .then('./routes')
   .then('./config/routes.js')
